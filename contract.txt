@@ -1,0 +1,37 @@
+B. Teams. If permitted under the Competition Website guidelines, multiple individuals may collaborate as a team (a "Team"); however, you may join or form only one Team. Each Team member must be a single individual with a separate Kaggle account. You must register individually for the Competition before joining a Team. You must confirm your Team membership to make it official by responding to the Team notification message sent to your Kaggle account. Team membership may not exceed the Maximum Team Size stated on the Competition Website.
+
+C. External Data. You may use data other than the Competition Data (“External Data”) to develop and test your Submissions. However, you will ensure the External Data is publicly available and equally accessible to use by all participants of the Competition for purposes of the competition at no cost to the other participants. The ability to use External Data under this Section 7.C (External Data) does not limit your other obligations under these Competition Rules, including but not limited to Section 11 (Winners Obligations).
+
+C. Use of Open Source. Unless otherwise stated in the Specific Competition Rules above, if open source code is used in the model to generate the Submission, then you must only use open source code licensed under an Open Source Initiative-approved license (see www.opensource.org) that in no event limits commercial use of such code or model containing or depending on such code.
+
+The potential winner(s) will be notified by email.
+If a potential winner (i) does not respond to the notification attempt within one (1) week from the first notification attempt or (ii) notifies Kaggle within one week after the Final Submission Deadline that the potential winner does not want to be nominated as a winner or does not want to receive a Prize, then, in each case (i) and (ii) such potential winner will not receive any Prize, and an alternate potential winner will be selected from among all eligible entries received based on the Competition’s judging criteria.
+
+As a condition to being awarded a Prize, a Prize winner must fulfill the following obligations:
+(a) deliver to the Competition Sponsor the final model's software code as used to generate the winning Submission and associated documentation and any other information the Competition Sponsor may request in relation to the model and its composition such as training data (or the procedure used to construct the training data), training script and the architecture and corresponding weights of the model. . The delivered software code should follow these documentation guidelines, must be capable of generating the winning Submission, and contain a description of resources required to build and/or run the executable code successfully. To the extent that the final model’s software code includes generally commercially available software that is not owned by you, but that can be procured by the Competition Sponsor without undue expense, then instead of delivering the code for that software to the Competition Sponsor, you must identify that software, method for procuring it, and any parameters or other information necessary to replicate the winning Submission;
+
+---> (b) grant to the Competition Sponsor the license to the winning Submission stated in the Competition Specific Rules above, and represent that you have the unrestricted right to grant that license; and
+
+Note this part of the agreement:
+Open Source: You hereby license and will license your winning Submission and the source code used to generate the Submission under an Open Source Initiative-approved license (see www.opensource.org) that in no event limits commercial use of such code or model containing or depending on such code.
+
+
+
+If I build a software and grant the license to another company, can I still work on the software or similar technologies and do business with it?
+
+ChatGPT:
+When you license software to another company, the rights you retain or grant depend on the specific terms of the license agreement you create. There are several key factors to consider:
+
+Type of License: Determine whether the license is exclusive or non-exclusive. An exclusive license generally means that only the licensee (the company to whom you've granted the license) can use the software, and you cannot grant other licenses or use the software commercially yourself. A non-exclusive license allows you to grant licenses to other parties or continue using the software yourself.
+
+Scope and Limitations: The license can include specific limitations on the geographic area, duration, field of use, or type of use. These limitations can affect whether you can work on or sell the software in certain markets or to certain industries.
+
+Development Rights: The agreement can specify whether you retain the right to continue developing the software. You might also set terms about creating derivative works or improvements. If you want to keep developing the software or similar technologies, this should be clearly outlined in the license.
+
+Intellectual Property Ownership: Retaining ownership of the intellectual property (IP) is crucial if you intend to continue working on the software. The licensing agreement should clearly state that you retain ownership of the original IP and any subsequent developments, unless you specifically agree to transfer these rights.
+
+Competition and Non-compete Clauses: Be aware of any non-compete clauses that might restrict your ability to create or work on similar technologies. These clauses must be reasonable in scope, geography, and duration to be enforceable.
+
+Confidentiality and Non-disclosure: If the software involves sensitive or proprietary information, ensure that the license includes provisions to protect this information, particularly if you plan to continue developing similar technologies.
+
+Before finalizing any licensing agreement, it's essential to consult with a legal professional who specializes in intellectual property and software licensing. This will help ensure that the terms of the license align with your business goals and legal rights, allowing you to continue working on or with the software as desired.
