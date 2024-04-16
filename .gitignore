@@ -1,1 +1,4 @@
-/data
+data
+*.png
+models/__pycache__
+datasets/__pycache__

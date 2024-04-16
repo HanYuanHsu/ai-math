@@ -9,7 +9,7 @@ class Model(ABC):
     """
     
     @abstractmethod
-    def predict(self, test_df: pd.DataFrame) -> pd.DataFrame:
+    def predict(self, test_df: pd.DataFrame, n_samples=-1) -> pd.DataFrame:
         """
         Make predictions based on the problem text provided in the test dataframe.
         
@@ -18,10 +18,13 @@ class Model(ABC):
                                     'id' - An identifier for each entry.
                                     'problem' - The text data on which predictions need to be made.
                                     DO NOT MUTATE test_df
+            n_samples: samples how many rows from test_df for predictions. For testing.
+                       Default is -1, meaning all rows are used.
         
         Returns:
-            pd.DataFrame: A dataframe containing two columns:
+            pd.DataFrame: A dataframe that must contain the following three columns:
                           'id' - The identifier for each entry.
+                          'problem' - same as 'problem' in test_df
                           'output' - The prediction for each problem.
         """
         pass
