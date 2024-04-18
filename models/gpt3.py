@@ -1,4 +1,4 @@
-from models.base import Model
+from models.base import Model, mod1000
 import openai
 from openai import OpenAI
 import pandas as pd
@@ -58,6 +58,3 @@ class GPT3(Model):
 
         return result
 
-def mod1000(output):
-    if output is not None:
-        return int(output) % 1000
