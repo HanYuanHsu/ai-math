@@ -1,0 +1,377 @@
+level,type,,problem
+Level 1,Algebra,1008,The largest value of $x$ that satisfies this equation is $\boxed{4}$.
+Level 1,Algebra,497,Wonder Woman can capture $\boxed{27}$ criminals in $4\frac{1}{2}$ hours.
+Level 1,Counting & Probability,1552,"Let's use the principle of inclusion-exclusion.
+
+Total boxes with either pens or pencils: $5 + 4 - 2 = 7$
+
+Therefore, boxes with neither pens nor pencils: $10 - 7 = \boxed{3}$."
+Level 1,Counting & Probability,1418,"The prime numbers with squares between 100 and 300 are 11, 13, 17, and 19. 
+
+Therefore, there are $\boxed{4}$ prime numbers with squares between 100 and 300."
+Level 1,Geometry,2008,"An octagonal prism has 16 edges.  
+
+$\boxed{16}$."
+Level 1,Geometry,1879,"The greatest perimeter of the triangle occurs when the two shorter sides are the base of the triangle and the longest side is the height (forming a right-angled triangle with the altitude to the base). Using Pythagoras' theorem, the length of the longest side is $\sqrt{15^2 - \left(\frac{10}{2}\right)^2} = \sqrt{225 - 25} = \sqrt{200} = 10\sqrt{2}$. 
+
+Therefore, the greatest possible perimeter of the isosceles triangle is $2 \times 15 + 10\sqrt{2}$. Simplifying, we get $30 + 10\sqrt{2} \approx 44.14$.
+
+Therefore, the greatest possible perimeter of this isosceles triangle is $\boxed{44.14}$ cm."
+Level 1,Intermediate Algebra,2905,$\boxed{4}$.
+Level 1,Intermediate Algebra,2715,"To find the remainder, we use polynomial long division:
+
+\[
+\begin{array}{r|llll}
+x-3 & x^3 & -3x^2 & -9x & +30 \\
+\cline{2-5}
+& x^3 & -3x^2 & & \\
+\cline{2-3}
+& & 0 & -9x & \\
+\cline{4-4}
+& & & -9x & +30 \\
+\cline{4-5}
+& & & & 21 \\
+\end{array}
+\]
+
+Therefore, the remainder is $\boxed{21}$."
+Level 1,Number Theory,3054,"The powers of $2$ modulo $5$ have a cycle of length $4$: $2^1\equiv 2, 2^2\equiv 4, 2^3\equiv 3, 2^4\equiv 1$. The remainder of $2^8$ when divided by $4$ is $1$, so the remainder of $2^8$ when divided by $5$ is $\boxed{1}$."
+Level 1,Number Theory,3423,"First, we can combine the numbers and find:
+
+$91145 + 91146 + 91147 + 91148 = 364586$.
+
+Now, we divide 364586 by 4 to find the remainder:
+
+$364586 \div 4 = 91146$ with a remainder of $\boxed{2}$."
+Level 1,Prealgebra,3854,"The total angle around a point is $360^\circ$. Since there is a right angle of $90^\circ$, the value of $y$ is $360^\circ - 90^\circ = \boxed{270^\circ}$."
+Level 1,Prealgebra,4395,The number that satisfies all these conditions is $\boxed{28}$.
+Level 1,Precalculus,4807,"The graph completes one cycle from $x = 0$ to $x = \frac{\pi}{2},$ which means $b = \boxed{4}.$"
+Level 1,Precalculus,4520,$\boxed{1}$.
+Level 2,Algebra,363,This simplifies to $\frac{3^4-3^3}{3^3-3^2} = \frac{81-27}{27-9} = \frac{54}{18} = \boxed{3}$.
+Level 2,Algebra,1064,"The set of four consecutive integers that sum to 22 is $\{4, 5, 6, 7\}$. 
+
+When each integer is increased by 2, we get $\{6, 7, 8, 9\}$. 
+
+The sum of the new set of integers is $6\cdot 20 + 7\cdot 20 + 8\cdot 20 + 9\cdot 20 = 120 + 140 + 160 + 180 = \boxed{600}$."
+Level 2,Counting & Probability,1474,$\boxed{720}$.
+Level 2,Counting & Probability,1506,$\boxed{330}$.
+Level 2,Geometry,2015,Sean will need $\boxed{3}$ new containers.
+Level 2,Geometry,1976,"The volume of a cone is given by the formula $V = \frac{1}{3} \pi r^2 h$, where $r$ is the radius and $h$ is the height. 
+
+Given that $V = 30\pi$, $r=3$, and $\pi = \pi$, we can solve for $h$:
+$$30\pi = \frac{1}{3} \pi \cdot 3^2 \cdot h$$
+$$30\pi = 3\pi h$$
+$$10 = h$$
+
+Therefore, the cup needs to be $\boxed{10}$ inches tall to hold $30\pi$ cubic inches of water."
+Level 2,Intermediate Algebra,2383,There is $\boxed{1}$ real root.
+Level 2,Intermediate Algebra,2439,"By the Triangle Inequality, we have
+\[|z + w| \le |z| + |w| = 2 + 5 = 7.\]Equality occurs when $z = -2$ and $w = 5,$ so the largest possible value of $|z + w|$ is $\boxed{7}$."
+Level 2,Number Theory,3444,"The units digit of $18^1$ is 8. The pattern for the units digit of the powers of 8 is 8, 4, 2, 6, 8, 4, 2, 6, ... 
+
+Since $6$ is an even power, the units digit of $18^6$ is $\boxed{4}$."
+Level 2,Number Theory,3522,"To find the number of three-digit numbers that are divisible by 13, we need to find the number of multiples of 13 between the smallest three-digit number divisible by 13, which is 104, and the largest three-digit number divisible by 13, which is 988.
+
+We can find the number of multiples of 13 in this range by calculating $\left\lfloor \frac{988}{13} \right\rfloor - \left\lfloor \frac{104}{13} \right\rfloor = 76 - 8 = 68$.
+
+Therefore, there are $\boxed{68}$ three-digit numbers divisible by 13."
+Level 2,Prealgebra,4340,"The composite numbers between 10 and 20 are 12, 14, 15, 16, 18. The sum of these numbers is:
+
+$12 + 14 + 15 + 16 + 18 = \boxed{75}$."
+Level 2,Prealgebra,3605,Carla studied for three or more hours on $\boxed{4}$ days in October.
+Level 2,Precalculus,4929,"Since the four points are coplanar, the expression $\frac{1}{1 - a} + \frac{1}{1 - b} + \frac{1}{1 - c}$ must sum to 0 to satisfy Menelaus' Theorem for the given triangle. Therefore, we have
+\[\frac{1}{1 - a} + \frac{1}{1 - b} + \frac{1}{1 - c} = 0.\]Thus, $\boxed{0}$."
+Level 2,Precalculus,4698,"Given that $\tan x+\tan y=4$ and $\cot x+\cot y=5$, we can rewrite these equations as
+\[\frac{\sin x}{\cos x} + \frac{\sin y}{\cos y} = 4\]
+\[\frac{\cos x}{\sin x} + \frac{\cos y}{\sin y} = 5.\]
+Adding these two equations, we get
+\[\frac{\sin x + \cos x}{\cos x\sin x} + \frac{\cos x+\sin x}{\cos x\sin x} = 9.\]
+This can be simplified to
+\[\frac{1}{\sin x \cos x} = 9.\]
+Since $\frac{2\sin x \cos x}{\sin 2x} = 1$, $\frac{1}{\sin x \cos x} = 2$. Thus, we have $\sin 2x = \frac{1}{2}$, which implies that $2x = 30^\circ$, or $x = 15^\circ$.
+
+Similarly, by subtracting the two equations, we have
+\[\frac{\sin x - \cos x}{\cos x \sin x} + \frac{\cos x - \sin x}{\cos x \sin x} = -1,\]
+and simplifying this gives
+\[\frac{1}{\sin x \cos x} = -1.\]
+This implies that $\sin 2x = -1$. Since the sine is negative in the third and fourth quadrants, this tells us that $2x=270^\circ$, or $x = 135^\circ$.
+
+Since $\tan(x+y) = \frac{\tan x + \tan y}{1-\tan x \tan y}$, $\tan(x+y) = \frac{4}{1-4} = \boxed{\frac{4}{3}}$."
+Level 3,Algebra,432,"The given equation can be rewritten as $(x-1)^2 = 10-2x$. Expanding and rearranging gives $x^2-6x+9=0$. Solving this quadratic equation gives $x=3$.
+
+Therefore, $\boxed{x=3}$."
+Level 3,Algebra,754,"The company breaks even or makes a profit when the revenue is non-negative. In other words, we need to find the $x$ values for which $y = x^2 - 8x - 33 \geq 0$.
+
+Factoring the quadratic expression gives us $(x-11)(x+3) \geq 0$. This inequality is satisfied when either both factors are non-positive or both are non-negative. This occurs for $x \leq -3$ or $x \geq 11$. 
+
+Therefore, the company breaks even or makes a profit when $x \geq \boxed{11}$."
+Level 3,Counting & Probability,1218,"The area of the shaded region is $\pi(6^2 - 4^2) = \pi(36 - 16) = 20\pi$ square inches, and the area of the whole dartboard is $\pi \cdot 6^2 = 36\pi$ square inches. So, the area of the non-shaded region is $36\pi - 20\pi = 16\pi$ square inches. 
+
+The proportion of the dartboard that is non-shaded is $\frac{16\pi}{36\pi} = \frac{4}{9}$. Therefore, we expect $\frac{4}{9} \cdot 9 = \boxed{4}$ darts to land in the non-shaded region."
+Level 3,Counting & Probability,1554,"Let's calculate the total number of games played by the six players. Helen played 5 games, Ines played 4 games, Janet played 3 games, Kendra played 3 games, and Lara played 4 games.
+
+The total number of games played is $5+4+3+3+4 = 19$. Since each game has exactly one winner, the total number of games won equals the total number of games played.
+
+Therefore, Monica won $\boxed{5}$ games."
+Level 3,Geometry,1808,"Since $ABCD$ is a parallelogram, its opposite sides are parallel. The vector going from $A$ to $B$ is $\langle 2, 0 \rangle$, so the vector going from $C$ to $D$ must be the same, $\langle 2, 0 \rangle$. Therefore, the coordinates of $D$ are $(6, 0)$. 
+
+The sum of the coordinates of point D is $6+0=\boxed{6}$."
+Level 3,Geometry,1950,"Since $ABDC$ and $EFHG$ are squares, we know that $DYES$ is also a square. From this, we can determine that $AB=\sqrt{1^2+5^2}= \sqrt{26}. $ Thus, \[[DYES]=(\sqrt{26})^2=26. \]Therefore, the area of quadrilateral $DYES$ is $\boxed{26}$."
+Level 3,Intermediate Algebra,2608,"The equation of the hyperbola can be written as
+\[\frac{(x + 1)^2}{4} - \frac{(y - 3)^2}{9} = 1.\]This gives us $h = -1,$ $k = 3,$ $a = 2,$ and $b = 3,$ so $h + k + a + b = -1 + 3 + 2 + 3 = \boxed{7}.$"
+Level 3,Intermediate Algebra,2991,"The center of the ellipse is $(0,0)$, and the foci are at $(c,0)$ and $(-c,0)$ where $c = \sqrt{k - 1}.$ 
+
+The distance between the foci is $2c = 2\sqrt{k - 1}.$ Let $r$ be the radius of the circle. The tangency points on the $x$-axis are $(r,0)$ and $(-r,0)$. The distance between the foci is equal to $2\sqrt{r^2 - (r-1)^2}.$
+
+We have $2\sqrt{k - 1} = 2\sqrt{r^2 - (r-1)^2}.$ Squaring both sides gives $k - 1 = r^2 - (r-1)^2.$ 
+
+Solving this equation gives $k - 1 = 2r - 1$, or $r = \frac{k}{2}.$ Since the circle passes through both foci, we have $F_1F_2 = 2r = \sqrt{k-1},$ giving $k-1 = 4r^2 = 4\left(\frac{k}{2}\right)^2 = k^2.$ 
+
+Solving this gives $k = \boxed{1}$"
+Level 3,Number Theory,3260,"The integers from 1 through 10 that are not divisible by 5 are 1, 2, 3, 4, 6, 7, 8, 9, 11. The units digit of $N$ is $1 \times 2 \times 3 \times 4 \times 6 \times 7 \times 8 \times 9 \times 1 = 181440,$ so the units digit of $N$ is $\boxed{0}$."
+Level 3,Number Theory,3272,The prime factorization of $36$ is $2^2 \cdot 3^2$. The sum of all positive factors of $36$ can be calculated using the formula for the sum of divisors of a number: $(1 + 2 + 2^2)(1 + 3 + 3^2) = (1+2+4)(1+3+9) = 7 \cdot 13 = \boxed{91}$.
+Level 3,Prealgebra,3947,"To find the number of four-digit integers between 2000 and 8000, we subtract the number of four-digit integers starting from 8000 and the number of four-digit integers starting from 2000.
+
+Number of four-digit integers starting from 8000: $9999 - 8000 + 1 = 2000$.
+Number of four-digit integers starting from 2000: $2999 - 2000 + 1 = 1000$.
+
+Therefore, the number of four-digit integers between 2000 and 8000 is $2000 - 1000 = 1000$.
+
+So, there are $\boxed{1000}$ four-digit integers that are less than 8000 and greater than 2000."
+Level 3,Prealgebra,4148,"Let $x$ be the length of the shadow of the flagpole. The ratio of the heights of the flagpole and the woman should be the same as the ratio of their respective shadows:
+\[\frac{20}{6} = \frac{x}{9}.\]
+Solving for $x$, we find $x = \frac{20}{6} \cdot 9 = 30.$ Therefore, the length of the shadow of the flagpole is $\boxed{30}$ feet."
+Level 3,Precalculus,4892,"We have the following relationships in a triangle:
+
+\[\begin{aligned} A &= \frac{1}{2}bc \sin A \\ &= \frac{1}{2}ac \sin B \\ &= \frac{1}{2}ab \sin C \end{aligned}\]
+
+Therefore, \[(b \sin C)(b \cos C + c \cos B) = b^2 \sin C \cos C + bc \sin C \cos B = \frac{1}{2}b^2 \sin 2C + \frac{1}{2} bc \sin A = \frac{1}{2}bc(\sin A + \sin 2C).\]
+
+From the Law of Sines, we know that $\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R,$ so $\sin A + \sin 2C = \frac{a}{b} \sin A + 2 \sin C \cos C = \frac{a}{b} \sin A + \sin 2C = \frac{2R}{b} \cdot \frac{a}{2R} + \sin 2C = \frac{c}{b} + \sin 2C = \frac{c^2 + b^2 - a^2}{bc} + \sin 2C.$
+
+Then, $\frac{c^2 + b^2 - a^2}{bc} = \frac{1}{2},$ and $a^2 = b^2 + c^2 - 2bc \cos A$ implies that $\cos A = \frac{b^2 + c^2 - a^2}{2bc} = 0,$ so $\angle A = 90^\circ,$ and $S = \frac{1}{2}bc = \frac{42}{2} = \boxed{21}.$"
+Level 3,Precalculus,4768,"Since the altitude from $A$ divides $\overline{BC}$ into segments of length $3$ and $17$, we can deduce that the base $BC$ has length $3+17=20$. 
+
+Using the formula for the area of a triangle, $\frac{1}{2} \text{ base } \times \text{ height}$, we have:
+
+Area $= \frac{1}{2} \times 20 \times \left( 3 \sqrt{1 + \left( \frac{22}{7} \right)^2} \right)$
+
+Area $= \frac{1}{2} \times 20 \times \left( 3 \sqrt{1 + \frac{484}{49}} \right)$
+
+Area $= \frac{1}{2} \times 20 \times \left( 3 \sqrt{\frac{49+484}{49}} \right)$
+
+Area $= \frac{1}{2} \times 20 \times \left( 3 \sqrt{\frac{533}{49}} \right)$
+
+Area $= \frac{1}{2} \times 20 \times \left( 3 \times \frac{23}{7} \right)$
+
+Area $= \frac{1}{2} \times 20 \times \frac{69}{7}$
+
+Area $= \frac{1}{2} \times 10 \times 69$
+
+Area $= \boxed{345}$."
+Level 4,Algebra,295,"Let $P$ be the amount he needs to invest now. After 5 years, this amount will grow to $100,000$ with a 6% annual interest rate.
+\[P \cdot (1 + 0.06)^5 = 100,000\]
+\[P \cdot 1.338225 \approx 100,000\]
+\[P \approx \frac{100,000}{1.338225} \approx \$74,558\]
+
+Therefore, he needs to invest $\boxed{\$74,558}$."
+Level 4,Algebra,810,"We can rewrite the equation as $(x-2)^2 + (y-3)^2 = 49$, which is the equation of a circle with radius $\boxed{7}$."
+Level 4,Counting & Probability,1227,$\boxed{90}$.
+Level 4,Counting & Probability,1587,"We first calculate $(3!)! = 6! = 720$. Then, we calculate $(720)! = 720!$. Dividing by $3! = 6$, we get $120!$. This means $k = 1$ and $n = 120$, so $k + n = 1 + 120 = \boxed{121}$."
+Level 4,Geometry,1703,"Let $x$ be the longer side length of the rectangle (say $AD$) and $y$ be the shorter side length (say $AB$). 
+
+From triangles $ABE, ADF,$ and $CEF,$ we have
+
+\[\begin{cases} 8 &= \frac{1}{2} y \cdot BE \\ 5 &= \frac{1}{2} x \cdot DF \\ 9 &= \frac{1}{2} (x-y) \cdot EF \end{cases}\]
+
+Solving for $BE, DF,$ and $EF,$ we find
+
+\[\begin{cases} BE &= \frac{16}{y} \\ DF &= \frac{10}{x} \\ EF &= \frac{18}{x-y} \end{cases}\]
+
+From the areas of the four triangles,
+
+\begin{align*}
+[ABCD] &= x \cdot y \\
+[ABE] &= \frac{1}{2} y \cdot BE = 8 \\
+[ADF] &= \frac{1}{2} x \cdot DF = 5 \\
+[CEF] &= \frac{1}{2} (x-y) \cdot EF = 9
+\end{align*}
+
+Therefore, we have the system of equations
+
+\[\begin{cases} 8 + 5 + 9 +  x \cdot y &= 2((16 + 10 + 18)) \\ x \cdot y &= 48 \\ \end{cases}\]
+
+Solving for $xy,$ we find $xy = \boxed{192}.$"
+Level 4,Geometry,1935,"Since $BD = 4BC$, we have $\frac{[BCD]}{[ABC]} = \left(\frac{1}{1+4}\right)^2 = \left(\frac{1}{5}\right)^2 = \frac{1}{25}$. Therefore, the area of $\triangle CDE$ is $\frac{1}{25} \times 6 = \boxed{\frac{6}{25}}$ square centimeters."
+Level 4,Intermediate Algebra,2271,"The center of the circle $x^2+y^2=1$ is at the origin $(0,0)$. The radius of this circle is $\sqrt{1}=1$.
+
+The point $(0,1)$ on this circle is the point of tangency of the square. Since the square is tangent to the circle, the line connecting the center of the circle to the point of tangency is perpendicular to the side of the square at the point of tangency. Thus, the line connecting the center of the circle to the point of tangency has the equation $y=-x+1$. 
+
+Since the two points of tangency on the sides of the square are midpoint between the points of intersection of the circles, the line intersects the circle $x^2+y^2=4$ at the points $(\frac{3}{5},\frac{4}{5})$ and $(-\frac{3}{5},\frac{4}{5})$. 
+
+Thus, the side length of the square is $2\sqrt{\left(\frac{3}{5}\right)^2+\left(\frac{1}{5}\right)^2}-1=\frac{2\sqrt{10}-5}{5}$. 
+
+The final answer is $2+10+5+5=\boxed{22}$."
+Level 4,Intermediate Algebra,2499,"There are 2001 terms in the equation.
+By Vieta's formulas, we know that the sum of the roots is the coefficient of $x^{2000}$ divided by the coefficient of $x^{2001}$, which is $\frac{3}{2} = 1.5$. 
+Since the sum of the roots is not zero, there is at least one real root.
+Therefore, the number of real roots is $\boxed{1}$."
+Level 4,Number Theory,3378,"To convert the base $b$ equation $4 \cdot 12 = 103$ into normal base 10 form, we can rewrite it as $4b + 12 = b^2 + 3$. 
+
+Simplifying this equation gives $b^2 - 4b - 9 = 0$. 
+
+This quadratic equation can be factored as $(b-6)(b+3) = 0$, so the possible values for $b$ are $b=6$ or $b=-3$. Since we are looking for a positive base, the only valid solution is $\boxed{b=6}$."
+Level 4,Number Theory,3449,"Since $3^2 = 9 < 423 < 3^3 = 27$, any number greater than or equal to $27$ will have $3$ digits in base $3$. Thus, the smallest value of $b$ such that $423_{10}$ in base $b$ has $3$ digits is $\boxed{3}$."
+Level 4,Prealgebra,4068,"The four smallest prime numbers are 2, 3, 5, and 7. Their product is $2 \times 3 \times 5 \times 7 = 210$.
+
+The four smallest composite numbers greater than 0 are 4, 6, 8, and 9. Their product is $4 \times 6 \times 8 \times 9 = 1728$.
+
+The positive difference between 210 and 1728 is $1728 - 210 = \boxed{1518}$."
+Level 4,Prealgebra,3608,"The perimeter of a rectangle is twice the sum of its length and width:
+\[2(3x+10+x+12)=76\]
+Solving this equation gives $x=6$. 
+The area of a rectangle is its length multiplied by its width:
+\[(3(6)+10)(6+12) = \boxed{378}\text{ sq ft}.\]"
+Level 4,Precalculus,4814,"The polynomial $z^7 + z^6 + z^5 + z^4 + z^3 + z^2 + z + 1$ is a cyclotomic polynomial, specifically the 8th cyclotomic polynomial.  The roots of this polynomial are the primitive 8th roots of unity, which are $\text{cis}\left(\frac{2k\pi}{8}\right) = \text{cis}\left(\frac{k\pi}{4}\right),$ for $k = 1, 3, 5, 7.$  Consider the unit vectors $(1,0),$ $\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right),$ $(0,1),$ and $\left(-\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right).$  Then $P$ is formed by connecting these four points in clockwise order.  We can divide $P$ into a square and two 45-45-90 triangles, as shown below.
+
+[asy]
+unitsize(1 cm);
+
+pair A, B, C, D, M;
+
+A = dir(0);
+B = dir(45);
+C = dir(90);
+D = dir(135);
+M = (B + C)/2;
+
+draw(A--B--C--D,red);
+draw(A--C,blue);
+draw(B--D,blue);
+
+label(""$1$"", (A + B)/2, N);
+label(""$1$"", (C + D)/2, N);
+label(""$\frac{\sqrt{2}}{2}$"", (M + C)/2, E, red);
+label(""$\frac{\sqrt{2}}{2}$"", (M + B)/2, W, red);
+label(""$\frac{\sqrt{2}}{2}$"", (M + D)/2, N, blue);
+[/asy]
+
+The square is a $\frac{\sqrt{2}}{2} \times \frac{\sqrt{2}}{2}$ square, so it has area $\frac{1}{2},$ and each 45-45-90 triangle has area $\frac{1}{8}.$  Therefore, the area of $P$ is $\frac{1}{2} + 2 \cdot \frac{1}{8} = \frac{5}{4},$ giving us an answer of $5 + 4 + 2 + 1 = \boxed{12}.$"
+Level 4,Precalculus,4770,"The volume of a tetrahedron with vertices $A, B, C, D$ can be calculated using the formula:
+
+$$V = \frac{1}{6}|\vec{AB} \cdot (\vec{AC} \times \vec{AD})|$$
+
+where $V$ is the volume of the tetrahedron, and $\vec{AB}, \vec{AC}, \vec{AD}$ are vectors formed by the vertices.
+
+Calculating the vectors:
+\begin{align*}
+\vec{AB} &= (3-0, 0-1, 1-2) = (3, -1, -1) \\
+\vec{AC} &= (4-0, 3-1, 6-2) = (4, 2, 4) \\
+\vec{AD} &= (2-0, 3-1, 2-2) = (2, 2, 0)
+\end{align*}
+
+Calculating the volume:
+\begin{align*}
+\vec{AC} \times \vec{AD} &= \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 4 & 2 & 4 \\ 2 & 2 & 0 \end{vmatrix} \\
+&= \hat{i}(2\cdot4 - 4\cdot2) - \hat{j}(4\cdot0 - 2\cdot2) + \hat{k}(4\cdot2 - 2\cdot2) \\
+&= \hat{i}(8 - 8) - \hat{j}(0 - 4) + \hat{k}(8 - 4) \\
+&= \hat{i}(0) - \hat{j}(-4) + \hat{k}(4) \\
+&= (0, 4, 4)
+\end{align*}
+
+Calculating the dot product $\vec{AB} \cdot (\vec{AC} \times \vec{AD})$:
+\begin{align*}
+\vec{AB} \cdot (\vec{AC} \times \vec{AD}) &= (3, -1, -1) \cdot (0, 4, 4) \\
+&= 3(0) + (-1)(4) + (-1)(4) \\
+&= -4 - 4 \\
+&= -8
+\end{align*}
+
+Now, calculating the volume:
+\begin{align*}
+V &= \frac{1}{6}|-8| \\
+&= \frac{1}{6}(8) \\
+&= \boxed{\frac{4}{3}}
+\end{align*}"
+Level 5,Algebra,339,"Notice that $f(f^{-1}(c))=c$, and we want to find $f^{-1}(c)\times c \times f(c)$, which is $(2c-3)c\cdot \frac{3}{2c-3}=3c$. Therefore, we must find $\frac{3n^2}{m} = \frac{kc+l}{m}$. Comparing the numerators and denominators, we have $k=3$, $l=0$, $m=1$, and $n^2=3$, so $n=\sqrt{3}$. Thus, $\frac{kn^2}{lm} = \frac{3\cdot 3}{0\cdot 1} = \boxed{9}$."
+Level 5,Algebra,143,"Let's square the first equation to get $a^2b^4 = \frac{729}{25}$. 
+
+Now, we can multiply this by $a^2b = 135$ (the second equation) to get $a^4b^5 = 729$. 
+
+So, $ab = \sqrt{729} = 27$, given $ab^2 = \frac{27}{5}$. 
+
+Thus, $b = \frac{27}{ab} = \frac{27}{27} = 1$. 
+
+Similarly, $a = \frac{27}{b^2} = \frac{27}{1} = 27$. 
+
+Therefore, $a + 5b = 27 + 5 = \boxed{32}$."
+Level 5,Counting & Probability,1194,"We can solve this using stars and bars, or balls and urns. There are three types of cookies, so we can think of them as three ""urns"". We need to distribute 6 cookies among 3 urns, which is equivalent to placing 2 bars among 3 urns. This gives us $\binom{2+3}{3} = \binom{5}{3} = \boxed{10}$ different assortments of six cookies that can be selected."
+Level 5,Counting & Probability,1281,"The total number of squares of all sizes in the grid can be determined by the sum of squares of each size. The $3 \times n$ grid contributes squares of sizes $1 \times 1$, $2 \times 2$, and $3 \times 3$. 
+
+Number of size $1 \times 1$ squares: $(3)(n)$
+
+Number of size $2 \times 2$ squares: $(2)(n-1)$
+
+Number of size $3 \times 3$ squares: $(1)(n-2)$
+
+Summing these up, we have $3n + 2n - 2 + n - 2 = 6n - 4$.
+
+From the problem, $6n - 4 = 70 \Rightarrow n = \boxed{12}$."
+Level 5,Geometry,1791,"The area of a parallelogram formed by the lines $y=a_1x+b_1$ and $y=a_2x+b_2$ is $|a_1b_2-a_2b_1|$. 
+
+Given the areas of the two parallelograms, we have
+\begin{align*}
+|a(d-c)-b(d-c)| &= 18 \implies |a-b||c-d| = 18\\
+|a(d+c)-b(d+c)| &= 72 \implies |a-b||c+d| = 72
+\end{align*}
+The values of $|a-b|$ and $|c \pm d|$ must be factors of 18 and 72, respectively. The possible combinations are $(|a-b|, |c-d|) = (1,18)$ and $(|a-b|, |c+d|) = (8,9)$.
+
+Since $a, b, c, d$ are positive integers, the minimum values that satisfy these equations are $a=10, b=1, c=2, d=8$. Therefore, the smallest possible value of $a+b+c+d$ is $10 + 1 + 2 + 8 = \boxed{21}$."
+Level 5,Geometry,1733,"The volume of the right rectangular prism $ABCDEFGH$ is four times the volume of pyramid $ABCH$. Since the volume of pyramid $ABCH$ is 20, the volume of the right rectangular prism $ABCDEFGH$ is $20 \times 4 = \boxed{80}$."
+Level 5,Intermediate Algebra,2614,"Let $x = a + b + c.$ Then by expanding the given equations, we have
+$x + (ab + bc + ca) = 1,$
+$x + 2(ab + bc + ca) = 2,$
+$x + 3(ab + bc + ca) = 3.$
+
+Subtracting the first two equations gives $ab + bc + ca = 1,$ and subtracting the last two equations gives $ab + bc + ca = 1,$ which means that $ab + bc + ca = 1$ for all $a,b,c$ that satisfy the given conditions.
+
+From the equation $ab + bc + ca = 1,$ we have
+$(a + 4)(b + 4)(c + 4) = a^2b + b^2c + c^2a + 16(ab + bc + ca) = a^2b + b^2c + c^2a + 16.$
+
+By Vieta's formulas, $a,$ $b,$ $c$ are the roots of the polynomial $t^3 - xt^2 + (ab + bc + ca) t - abc = 0.$ Since the polynomial $t^3 - xt^2 + t - abc = 0$ is satisfied for all $t,$ this means $x = 3,$ so $a + 4,$ $b + 4,$ $c + 4$ are the roots of the polynomial $t^3 - 3t^2 + t - (a + 4)(b + 4)(c + 4) = 0.$ By Vieta's formulas, the coefficient of $t$ in this polynomial is $3,$ so the sum of its roots is $3.$ Thus, $(a + 4)(b + 4)(c + 4) = \boxed{13}.$"
+Level 5,Intermediate Algebra,2146,"Let $A = \frac{x^2}{n^2-1} + \frac{y^2}{n^2-3^2}+\frac{z^2}{n^2-5^2}+\frac{w^2}{n^2-7^2}.$
+
+Summing all equations, we get
+\begin{align*} 4A + 16A + 36A + 64A &= 4 + 1 + 1 + 1 \\ 120A &= 7 \\ A &= \frac{7}{120}. \end{align*}Thus $w^2+x^2+y^2+z^2 = \frac{7}{120} \cdot 4 = \boxed{\frac{7}{30}}.$"
+Level 5,Number Theory,3574,"Since $9$ is its own inverse $\pmod m$, we have $9^2 \equiv 1\pmod m$, which implies $m$ divides $80$.
+Since $3$ is not its own inverse $\pmod m$, we must have $3^2 \not\equiv 1 \pmod m$, which implies $m$ does not divide $8$.
+
+Hence, the possible values for $m$ are the factors of $80$ that do not divide $8$: $1, 5, 10, 20, 40, 80.$
+
+Therefore, there are $\boxed{6}$ possible values for $m$."
+Level 5,Number Theory,3167,"The greatest common divisor of any set of numbers is always 1 as all positive integers share 1 as a common divisor.
+
+Therefore, the greatest common divisor of all the members in the set containing numbers that are the product of four consecutive positive integers is $\boxed{1}$."
+Level 5,Prealgebra,3838,"The sum of the interior angles of a polygon with $n$ sides is given by the formula $180(n-2)$. Since each interior angle of this polygon is 170 degrees, we can set up the equation $170n = 180(n-2)$. 
+
+Solving for $n$:
+
+$170n = 180n - 360$
+
+$10n = 360$
+
+$n = 36$
+
+Therefore, the polygon has $\boxed{36}$ sides."
+Level 5,Prealgebra,4238,"Let's first find the number of positive integers with odd number of digits less than $10^n$ by considering cases when $n=1,2,3, \ldots$. When $n=1$, all single digit numbers are included, so there are 9 numbers. When $n=2$, all two-digit numbers are included, so there are $90-9=81$ numbers. Similarly, for $n=3$, there are $900-90=810$ numbers, and so on. We can generalize this by observing that for $10^n$, there are $10^n-10^{n-1}=9 \cdot 10^{n-1}$ numbers with an odd number of digits.
+
+Therefore, the $1000^{\rm th}$ positive integer with an odd number of digits can be found by solving the equation $9 \cdot 10^{n-1} = 1000$. Simplifying, we get $10^{n-1} = \frac{1000}{9} = 111.\overline{1}$. Since $10^3 = 1000$, we know that the $1000^{\rm th}$ positive integer with an odd number of digits lies in the range $10^3$ to $10^4$, inclusive. 
+
+Hence, the $1000^{\rm th}$ positive integer with an odd number of digits is $\boxed{1999}$."
+Level 5,Precalculus,4642,"The values of $x$ for which $\sin(k\pi x)$ is undefined are when $k\pi x$ is an odd multiple of $\frac{\pi}{2}$, which occurs when $x$ is an integer or $\frac12$ plus an integer. 
+So, the points of discontinuity are $x=0,1,\frac12$. 
+
+Thus, the intersection of the domain of $f(x)$ with the interval $[0,1]$ consists of the intervals $(0,1)\backslash\left\{\frac12\right\}$, which is one open interval. 
+
+Therefore, $n=\boxed{1}$."
+Level 5,Precalculus,4880,"The equation $\frac{1}{5}\log_2 x = \sin (5\pi x)$ can be rewritten as $\log_2 x = 5\sin (5\pi x)$. Since $-1 \leq \sin (5\pi x) \leq 1$, the only time when $5\sin (5\pi x)$ is in the range of $\log_2 x$ is when $5 \sin(5\pi x) = 1$, which occurs when $\sin(5\pi x) = \frac{1}{5}$ which implies $5\pi x = \frac{\pi}{6} + 2 \pi k$ where $k$ is an integer. This simplifies to $x = \frac{61}{150} + \frac{2}{5}k$. Since this is in the range $[1,\infty)$, $x$ must also be in that range. Thus, the only possible answer in the range is $\boxed{1}$."

@@ -5,8 +5,11 @@ import pandas as pd
 import os
 from datasets import MATH
 
+default_system_prompt = "You are an assistant that is very good at mathematics. Given a mathematics problem, determine the answer, which is an integer, a float, or a fraction. Put your answer in the box \\boxed{}"
 class GPT3(Model):
-    def __init__(self):
+    def __init__(self, system_prompt=default_system_prompt):
+        self.sysprompt = system_prompt
+
         self.client = OpenAI()
         api_key = os.environ.get("OPENAI_API_KEY")
         if api_key is not None:
@@ -14,12 +17,11 @@ class GPT3(Model):
         else:
             raise Exception("openai api key not set")
 
-    def predict(self, test_df: pd.DataFrame, n_samples=-1) -> pd.DataFrame:
-        def predict_from_row(row):
-            response = self.client.chat.completions.create(
+    def _predict(self, question: str):
+        response = self.client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
-                    {"role": "system", "content": "You are an assistant that is very good at mathematics. Given a mathematics problem, determine the answer, which is an integer, a float, or a fraction. Put your answer in the box \\boxed{}"},
+                    {"role": "system", "content": self.sysprompt},
                     {"role": "user", "content": "What is $(\\frac{7}{8})^3 \\cdot (\\frac{7}{8})^{-3}$?"},
                     {"role": "assistant", "content": "$\\boxed{1}$."},
                     {"role": "user", "content": "In how many ways can 4 books be selected from a shelf of 6 books if the order in which the books are selected does not matter?"},
@@ -36,22 +38,26 @@ class GPT3(Model):
                     {"role": "assistant", "content": "$\\boxed{2}$."},
                     {"role": "user", "content": "How many zeros are at the end of the product 25 $\\times$ 240?"},
                     {"role": "assistant", "content": "$\\boxed{3}$."},
-                    {"role": "user", "content": row['problem']}
+                    {"role": "user", "content": question}
                 ]
             )
+        return response.choices[0].message.content
 
-            return response.choices[0].message.content
-        
+
+    def predict(self, test_df: pd.DataFrame, n_samples=-1) -> pd.DataFrame:        
         if n_samples >= 1:
             df = test_df.sample(n=n_samples)            
         else:
             df = test_df
 
-        predictions = df.apply(predict_from_row, axis=1)
-        output = predictions.apply(MATH.extract_answer)
+        predictions = df['problem'].apply(self._predict)
+        output = predictions.apply(MATH.extract_answer).apply(mod1000)
 
         result = pd.concat([df[['id', 'problem']], predictions, output], axis=1)
         result.columns = ['id', 'problem', 'output_lengthy', 'output']
 
         return result
 
+def mod1000(output):
+    if output is not None:
+        return int(output) % 1000
