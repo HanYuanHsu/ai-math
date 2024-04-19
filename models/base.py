@@ -29,4 +29,6 @@ class Model(ABC):
         """
         pass
 
-    
+def mod1000(output):
+    if output is not None:
+        return int(output) % 1000

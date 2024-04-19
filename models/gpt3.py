@@ -1,4 +1,4 @@
-from models.base import Model
+from models.base import Model, mod1000
 import openai
 from openai import OpenAI
 import pandas as pd
