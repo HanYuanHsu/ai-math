@@ -5,17 +5,6 @@ from flask import Flask, request
 MODEL_NAME = "deepseek-ai/deepseek-math-7b-instruct"
 
 DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
-TEMPLATE = """
-___input___
-
-Please reason step by step, and put your final answer within \\boxed{}.
-
-For example:
-Question: What is the value for 20*3?
-
-You should put your final answer 60 within \\boxes{}.
-\\boxes{60}
-"""
 
 class Deepseek():
     def __init__(self, model_name, device): 
@@ -27,9 +16,7 @@ class Deepseek():
         self.model.generation_config = GenerationConfig.from_pretrained(model_name)
         self.model.generation_config.pad_token_id = self.model.generation_config.eos_token_id
 
-    def predict(self, question):
-        prompt = TEMPLATE.replace('___input___', question)
-
+    def predict(self, prompt):
         messages = [
             {"role": "user", "content": prompt}
         ]
@@ -43,8 +30,8 @@ model = Deepseek(MODEL_NAME, DEVICE)
 
 @app.route("/", methods=['POST'])
 def receive():
-    question = request.values.get('question')
-    response = model.predict(question)
+    prompt = request.values.get('prompt')
+    response = model.predict(prompt)
     return {'response': response}
 
 if __name__ == '__main__':
