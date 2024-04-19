@@ -61,10 +61,32 @@ class GPT3(Model):
         result.columns = ['id', 'problem', 'output_lengthy', 'output']
 
         return result
+    
+class GPT0419(Model):
+    def __init__(self):
+        self.main_model = GPT3()
+    
+    def predict(self, test_df: pd.DataFrame, n_samples=-1) -> pd.DataFrame:
+        if n_samples >= 1:
+            df = test_df.sample(n=n_samples).copy()     
+        else:
+            df = test_df.copy()
 
-def mod1000(output):
-    if output is not None:
-        return int(output) % 1000
+        def append_hint(text: str) -> str:
+            # first, locate the math expressions in the problem statement
+            expressions, equations, equalities, solutions, parse_exceptions = get_equations(text)
+            # then, generate hint
+            hint = get_hint(expressions, solutions)
+            return text + '\n' + hint
+        
+        df['hinted_problem'] = df['problem'].apply(append_hint)
+        predictions = df['hinted_problem'].apply(self.main_model._predict)
+        output = predictions.apply(MATH.extract_answer).apply(mod1000)
+
+        result = pd.concat([df[['id', 'problem']], predictions, output], axis=1)
+        result.columns = ['id', 'problem', 'output_lengthy', 'output']
+
+        return result
 
 
 def get_equations(text: str):
