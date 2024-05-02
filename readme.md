@@ -20,3 +20,11 @@ Take DeepSeek model for example:
     ```
     python evaluate/deepseek.py
     ```
+
+## Add models
+
+You will complete these `python` files.
+
+- `deploy/${NEW_MODEL}.py`: how to deploy your model to handle the prompt requests
+- `models/${NEW_MODEL}.py`: how to request to your model which deployed
+- `evaluate.py`: import your model and use
