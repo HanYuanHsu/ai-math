@@ -18,7 +18,7 @@ class MATHDataset(Dataset):
             if ( problem_types == None ) or ( problem_type in problem_types ):
                 for problem_json in os.listdir(f'{basedir}/{dataset_type}/{problem_type}'):
                     problem = load_json(f'{basedir}/{dataset_type}/{problem_type}/{problem_json}')
-                    answer = self.extract_answer(problem['solution'])
+                    answer = extract_answer(problem['solution'])
 
                     if isinstance(answer, int):
                         self.data.append({
@@ -37,17 +37,6 @@ class MATHDataset(Dataset):
     def __getitem__(self, index):
         return self.data[index]
 
-    def extract_answer(self, text: str) -> int | None:
-        # regular expression to match the number within \\boxed{}
-        pattern = r'\\boxed\{(\d+)\}'
-        
-        match = re.search(pattern, text)
-        
-        if match:
-            return int(match.group(1))
-        else:
-            return None
-
     def sample_per_categories(self, num):
         new_data = []
         counter = {}
@@ -61,6 +50,17 @@ class MATHDataset(Dataset):
         return self.data
     
     
+def extract_answer(text: str) -> int | None:
+    # regular expression to match the number within \\boxed{}
+    pattern = r'\\boxed\{(\d+)\}'
+    
+    match = re.search(pattern, text)
+    
+    if match:
+        return int(match.group(1))
+    else:
+        return None
+
 def accuracy(model_output, actual, n_samples):
     '''
     
