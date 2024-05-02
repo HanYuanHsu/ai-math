@@ -26,5 +26,6 @@ Take DeepSeek model for example:
 You will complete these `python` files.
 
 - `deploy/${NEW_MODEL}.py`: how to deploy your model to handle the prompt requests
+- `prompts/prompt.py`: Add your prompt for your new models
 - `models/${NEW_MODEL}.py`: how to request to your model which deployed
 - `evaluate.py`: import your model and use
