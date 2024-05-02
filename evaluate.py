@@ -1,17 +1,20 @@
-import sys
-sys.path.append('/home/snsd0805/code/Ai-Math/ai-math/')
 from utils.file import load_json, dump_json
-from models.deepseek import DeepSeek
 from datasets.MATH import MATHDataset
 from models.base import mod1000
 
+MODEL = "deepseek"
 HOST = '127.0.0.1'
 PORT = 8888
 
 if __name__ == '__main__':
     dataset = MATHDataset('./datasets/MATH', dataset_type='train', sample_per_categorie_num=10)
-    model = DeepSeek(HOST, PORT)
     problem_set_json = load_json('./dataset.json')
+
+    if MODEL == 'deepseek':
+        from models.deepseek import DeepSeek
+        model = DeepSeek(HOST, PORT)
+    else:
+        raise ImportError(f"No module name {MODEL}")
 
     correct = 0
     correct_categories = {}
