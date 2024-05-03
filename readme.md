@@ -4,3 +4,30 @@ You are a mathematician that is excellent at finding patterns and trends from nu
 
 I have downloaded code llama weights in cml7. Check contents of /tmp2/hhhsu
 
+## Run Evaluation
+
+Take DeepSeek model for example:
+
+1. Deploy the model
+
+    Default run on http://localhost:8888
+
+    ```
+    cd deploy && python deepseek.py
+    ```
+2. Evaluate
+    
+    You can change the prompt in `prompts/prompt.py`
+
+    ```
+    python evaluate/deepseek.py
+    ```
+
+## Add models
+
+You will complete these `python` files.
+
+- `deploy/${NEW_MODEL}.py`: how to deploy your model to handle the prompt requests
+- `prompts/prompt.py`: Add your prompt for your new models
+- `models/${NEW_MODEL}.py`: how to request to your model which deployed
+- `evaluate.py`: import your model and use

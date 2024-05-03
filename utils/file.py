@@ -7,5 +7,4 @@ def load_json(filename):
 
 def dump_json(data, filename):
     with open(filename, 'w') as fp:
-        json.dump(data, filename)
-
+        json.dump(data, fp)

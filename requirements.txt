@@ -2,4 +2,5 @@ torch
 transformers
 requests
 flask
+pandas
 
