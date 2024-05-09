@@ -6,6 +6,15 @@ MODEL = "deepseek"
 HOST = '127.0.0.1'
 PORT = 8888
 
+def evaluate(model, type, level, **dataset_kwargs):
+    '''
+    :dataset_kwargs: the kwargs for MATHDataset,
+        including problem_types,
+        sample_per_categorie_num
+    '''
+    dataset = MATHDataset('./datasets/MATH', dataset_type='train', **dataset_kwargs)
+    problem_set_json = load_json('./dataset.json')
+
 if __name__ == '__main__':
     dataset = MATHDataset('./datasets/MATH', dataset_type='train', sample_per_categorie_num=10)
     problem_set_json = load_json('./dataset.json')
@@ -19,7 +28,7 @@ if __name__ == '__main__':
     correct = 0
     correct_categories = {}
     for index, i in enumerate(dataset):
-        print(f"{index} problem_ID={i['id']} answer={i['answer']}")
+        print(f"{index} problem_ID={i['id']} true answer (no mod 1000)={i['answer']}")
         response, predict_answer = model.predict(i['problem'])
         print(f"    response answer: {predict_answer}")
         problem_set_json[index]['response'] = response

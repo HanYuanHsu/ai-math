@@ -7,7 +7,7 @@ import pandas as pd
 import os
 import torch
 from torch.utils.data import Dataset
-from utils.file import load_json
+from utils.file import load_json, dump_json
 import random
 
 class MATHDataset(Dataset):
@@ -30,6 +30,8 @@ class MATHDataset(Dataset):
                         })
         random.shuffle(self.data)
         self.sample_per_categories(sample_per_categorie_num)
+
+        dump_json(self.data, "./dataset.json")
 
     def __len__(self):
         return len(self.data)

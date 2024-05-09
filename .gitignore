@@ -1,4 +1,7 @@
 data
+datasets/MATH
 *.png
 models/__pycache__
 datasets/__pycache__
+prompts/__pycache__
+utils/__pycache__
