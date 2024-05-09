@@ -8,6 +8,8 @@ PORT = 8888
 
 def evaluate(model, type, level, **dataset_kwargs):
     '''
+    Evaluate model on each type and level.
+
     :dataset_kwargs: the kwargs for MATHDataset,
         including problem_types,
         sample_per_categorie_num
