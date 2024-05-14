@@ -126,6 +126,17 @@ class DeepseekMath:
         device_map = {ii: jj for (ii, jj) in device_map}
         return device_map
 
+    def generate(self, input_text, *args, **kwargs):
+        model_inputs = self.tokenizer(input_text, return_tensors='pt').to(self.model.device)
+        return self.model.generate(**model_inputs, 
+                                     max_new_tokens=TOTAL_TOKENS-ALREADY_GEN, 
+                                     return_dict_in_generate=USE_PAST_KEY,
+                                     past_key_values=old_values,
+                                     do_sample = True,
+                                     temperature = temperature_inner,
+                                     top_p = top_p_inner,
+                                     num_return_sequences=1, stopping_criteria = stopping_criteria)
+
     def predict(self, prompt):
         messages = [
             {"role": "user", "content": prompt}
