@@ -1,7 +1,8 @@
 '''
 
 This Flask application serves 2 api endpoints for the remote notebook
-to retrieve the data, submit the answer and we will return the 
+to retrieve the data, submit the answer and we will return retu
+rn the 
 evaluation results for the remote notebook.
 
 - /problem/next
@@ -37,7 +38,9 @@ evaluation results for the remote notebook.
         - result
             - if 'finished' is False, this will be 'None'
             - if 'finished' is True, you will get a 'str'
-            
+              
+
+          
 
 '''
 from utils.file import load_json, dump_json
@@ -46,6 +49,7 @@ from models.base import mod1000
 from flask import Flask, request
 import json
 import os
+import argparse
 
 MODEL = "deepseek"
 HOST = '0.0.0.0'
@@ -106,7 +110,14 @@ def submit(index):
         return response
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--host", default=HOST)
+
     DATASET = MATHDataset('./datasets/MATH', dataset_type='train', sample_per_categorie_num=10)
     PROBLEM_SET_JSON = load_json('./dataset.json')
 
-    app.run(host='0.0.0.0', port=8888)
+    args = parser.parse_args()
+    #print(f"host: {args.host}")
+
+    app.run(host=args.host, port=8888)
+    
