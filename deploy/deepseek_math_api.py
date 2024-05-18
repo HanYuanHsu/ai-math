@@ -12,6 +12,8 @@ from transformers import (
 import gc
 from flask import Flask, request
 
+from utils.lewis import *
+
 MODEL_NAME = "deepseek-ai/deepseek-math-7b-instruct"
 
 DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
@@ -128,15 +130,11 @@ class DeepseekMath:
 
     def generate(self, input_text, *args, **kwargs):
         model_inputs = self.tokenizer(input_text, return_tensors='pt').to(self.model.device)
-        return self.model.generate(**model_inputs, 
-                                     max_new_tokens=TOTAL_TOKENS-ALREADY_GEN, 
-                                     return_dict_in_generate=USE_PAST_KEY,
-                                     past_key_values=old_values,
-                                     do_sample = True,
-                                     temperature = temperature_inner,
-                                     top_p = top_p_inner,
-                                     num_return_sequences=1, stopping_criteria = stopping_criteria)
+        generation_output = self.model.generate(**model_inputs, *args, **kwargs)
+        output_ids = generation_output[0]
+        return self.tokenizer.decode(output_ids, skip_special_tokens=True)
 
+    '''
     def predict(self, prompt):
         messages = [
             {"role": "user", "content": prompt}
@@ -144,17 +142,18 @@ class DeepseekMath:
         input_tensor = self.tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors="pt").to(self.device)
         outputs = self.model.generate(input_tensor, max_new_tokens=512)
 
-        return self.tokenizer.decode(outputs[0][input_tensor.shape[1]:], skip_special_tokens=True)
+        return self.tokenizer.decode(outputs[0][input_tensor.shape[1]:], skip_special_tokens=True)'''
 
-app = Flask(__name__)
-model = Deepseek(MODEL_NAME, DEVICE)
+# app = Flask(__name__)
+# model = Deepseek(MODEL_NAME, DEVICE)
 
-@app.route("/", methods=['POST'])
-def receive():
-    prompt = request.values.get('prompt')
-    response = model.predict(prompt)
-    return {'response': response}
+# @app.route("/", methods=['POST'])
+# def receive():
+#     prompt = request.values.get('prompt')
+#     response = model.predict(prompt)
+#     return {'response': response}
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8888)
+    model_path = 
+    model = DeepseekMath()
 
