@@ -5,3 +5,4 @@ models/__pycache__
 datasets/__pycache__
 prompts/__pycache__
 utils/__pycache__
+deploy/__pycache__

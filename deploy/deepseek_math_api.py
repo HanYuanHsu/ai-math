@@ -165,12 +165,12 @@ class DeepseekMath:
 if __name__ == '__main__':
     model = DeepseekMath(model_name=MODEL_NAME,
                          hf_cache_dir=HF_CACHE_DIR,
-                         devices=0, # ?
+                         devices=[0, 1],
                          quant=True)
     
     input_text = "What is the square root of 16?"
     print(f"Question: {input_text}")
     print("Response:\n")
     res = model.generate(input_text)
-    print(res)
+    print(res) # the output is a python tutorial??
 
