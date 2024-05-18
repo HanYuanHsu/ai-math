@@ -1,3 +1,4 @@
+import os
 import torch
 import transformers
 from transformers import (
@@ -10,23 +11,31 @@ from transformers import (
     StoppingCriteriaList
 )
 import gc
-from flask import Flask, request
+#from flask import Flask, request
 
 from utils.lewis import *
 
 MODEL_NAME = "deepseek-ai/deepseek-math-7b-instruct"
 
+HF_CACHE_DIR = "/home/master/13/hhhsu/models"
+
 DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
 class DeepseekMath:
-    def __init__(self, model_path, devices, quant:bool = False):
-        self.model_path = model_path
+    def __init__(self,
+                 model_name, # model name or model path
+                 hf_cache_dir,
+                 devices, # a list of device indices
+                 quant:bool = False):
+        os.environ['HF_HOME'] = hf_cache_dir # it seems that this is not working?
+
+        self.model_name = model_name
         self.quant = quant
         self.devices = devices
 
-        self.config = AutoConfig.from_pretrained(self.model_path)
+        self.config = AutoConfig.from_pretrained(self.model_name)
         self.config.gradient_checkpointing = True
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_path)
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
 
         self.USE_PAST_KEY = True
         self.DEEP = True
@@ -39,7 +48,7 @@ class DeepseekMath:
 
         print("Loading DeepseekMath Model ...")
         print(f"    devices: {self.devices}")
-        print(f"    model path: {self.model_path}")
+        print(f"    model path: {self.model_name}")
 
         if self.quant:
             self.device_map = "sequential"
@@ -50,7 +59,7 @@ class DeepseekMath:
                 bnb_4bit_use_double_quant=True,
             )
             self.model = AutoModelForCausalLM.from_pretrained(
-                self.model_path,
+                self.model_name,
                 device_map=self.device_map,
                 torch_dtype="auto",
                 trust_remote_code=True, 
@@ -60,7 +69,7 @@ class DeepseekMath:
         else:
             self.device_map = self._get_device_map(devices)
             self.model = AutoModelForCausalLM.from_pretrained(
-                self.model_path,
+                self.model_name,
                 device_map=self.device_map,
                 torch_dtype="auto",
                 trust_remote_code=True,
@@ -128,9 +137,9 @@ class DeepseekMath:
         device_map = {ii: jj for (ii, jj) in device_map}
         return device_map
 
-    def generate(self, input_text, *args, **kwargs):
+    def generate(self, input_text):
         model_inputs = self.tokenizer(input_text, return_tensors='pt').to(self.model.device)
-        generation_output = self.model.generate(**model_inputs, *args, **kwargs)
+        generation_output = self.model.generate(**model_inputs, max_new_tokens=512)
         output_ids = generation_output[0]
         return self.tokenizer.decode(output_ids, skip_special_tokens=True)
 
@@ -154,6 +163,14 @@ class DeepseekMath:
 #     return {'response': response}
 
 if __name__ == '__main__':
-    model_path = 
-    model = DeepseekMath()
+    model = DeepseekMath(model_name=MODEL_NAME,
+                         hf_cache_dir=HF_CACHE_DIR,
+                         devices=0, # ?
+                         quant=True)
+    
+    input_text = "What is the square root of 16?"
+    print(f"Question: {input_text}")
+    print("Response:\n")
+    res = model.generate(input_text)
+    print(res)
 
