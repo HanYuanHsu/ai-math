@@ -24,10 +24,11 @@ DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device('cp
 class DeepseekMath:
     def __init__(self,
                  model_name, # model name or model path
-                 hf_cache_dir,
+                 hf_cache_dir, # huggingface cache directory of the deepseek model
                  devices, # a list of device indices
-                 quant:bool = False):
-        os.environ['HF_HOME'] = hf_cache_dir # it seems that this is not working?
+                 quant:bool = False # whether to use quantization
+        ):
+        os.environ['HF_HOME'] = hf_cache_dir
 
         self.model_name = model_name
         self.quant = quant
@@ -163,14 +164,20 @@ class DeepseekMath:
 #     return {'response': response}
 
 if __name__ == '__main__':
+    from prompts.prompt import CODE
     model = DeepseekMath(model_name=MODEL_NAME,
                          hf_cache_dir=HF_CACHE_DIR,
                          devices=[0, 1],
                          quant=True)
     
-    input_text = "What is the square root of 16?"
-    print(f"Question: {input_text}")
-    print("Response:\n")
-    res = model.generate(input_text)
-    print(res) # the output is a python tutorial??
+    problem = "Solve $\log_4 x + \log_2 x^2 = 10$."
+    initial_message = CODE.format(problem, "{}")
+    prompt = f"User: {initial_message}"
+    print("<Prompt>\n")
+    print(prompt)
+    print("\n</Prompt>")
+    print("<Response>\n")
+    res = model.generate(prompt)
+    print(res)
+    print("\n</Response>")
 
