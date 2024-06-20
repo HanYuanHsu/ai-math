@@ -64,6 +64,21 @@ CORRECT_CATEGORIES = {}
 
 app = Flask(__name__)
 
+def calculate_accuracy_from_json(json_filepath):
+    with open(json_filepath) as f:
+        data = json.load(f)
+    n_data = len(data)
+    n_correct = 0
+    for d in data:
+        if d["status"] == "correct":
+            n_correct += 1
+        elif not (d["status"] == "incorrect"):
+            raise Exception('Problem with d["status"]')
+    print(f"number of data: {n_data}")
+    print(f"number of correct predictions: {n_correct}")
+    print(f"accuracy: {n_correct / n_data}")
+
+
 @app.route('/problem/next', methods=['GET'])
 def next_problem():
     global PROBLEM_INDEX
