@@ -47,3 +47,18 @@ Check out `utils/lewis.py`. The functions there are directly copied from Lewis's
 
 Go to the `ai-math` directory and run `python -m utils.lewis` to see how the `process_code` function works.
 
+# 6/10
+Trying out finetuning.
+Can use off-the shelf lora adapters: <br>
+https://huggingface.co/CMU-AIR2/deepseek-math-base-LORA-ArithSteps-10k <br>
+
+### Tutorials
+https://www.kaggle.com/code/jatinsinghsagoi/aimo-24-finetune-deepseek-math <br>
+^ I ran through this example, but looks like finetuning didn't make results better?<br>
+Also, the notebook sets the prompt format for the model wrong. <br>
+https://www.youtube.com/watch?v=Us5ZFp16PaU <br>
+^ I am replicating this video in finetuning.py, but I might stop
+
+### Strategies for improving performance
+https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/505756
+
