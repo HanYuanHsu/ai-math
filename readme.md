@@ -62,3 +62,7 @@ https://www.youtube.com/watch?v=Us5ZFp16PaU <br>
 ### Strategies for improving performance
 https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/505756
 
+# 6/20
+https://www.kaggle.com/code/jonathanmichala/updated-code-interpretation-492274-for-competition
+https://www.kaggle.com/code/harrytheorange/updated-code-interpretation
+https://www.kaggle.com/code/chewkokwahibrainai/updated-code-interpretation-n-repetitions-17
