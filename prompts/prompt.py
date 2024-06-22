@@ -10,6 +10,18 @@ Write the entire script covering all the steps (use comments and document it wel
 
 Approach:"""
 
+CODE1 = """Below is a math problem you are to solve:
+{}
+Generate sympy code to solve the problem.
+Remember:
+-- Each line in the code should be clearly commented to explain why you take this step to solve the problem.
+-- Write the entire script covering all the steps and wrap it within ```python ... ```.
+-- The entire script should clearly demonstrate your step-by-step reasoning.
+-- Print out the final result, and there must be only one print statement in the script.
+-- The final result printed out must be a nonnegative integer, not an algebraic expression.
+
+Approach:"""
+
 
 COT = """Below is a math problem you are to solve (positive numerical answer!):
 \"{}\"
