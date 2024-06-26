@@ -24,11 +24,12 @@ DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device('cp
 class DeepseekMath:
     def __init__(self,
                  model_name, # model name or model path
-                 hf_cache_dir, # huggingface cache directory of the deepseek model
                  devices, # a list of device indices
+                 hf_cache_dir = None, # huggingface cache directory of the deepseek model
                  quant:bool = False # whether to use quantization
         ):
-        os.environ['HF_HOME'] = hf_cache_dir
+        if hf_cache_dir:
+            os.environ['HF_HOME'] = hf_cache_dir
 
         self.model_name = model_name
         self.quant = quant
