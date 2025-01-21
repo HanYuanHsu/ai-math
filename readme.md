@@ -1,3 +1,40 @@
+# Release
+The Kaggle notebook submitted to the <a href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize">AI Mathematical Olympiad - Progress Prize 1</a> can be viewed <a href="https://www.kaggle.com/code/tingjunwang/refine/edit/run/185764007">here [CHANGE TO PUBLIC]</a>.
+
+Below is the workflow of our solution. The round boxes mean ... 
+
+Notice that there is a loop in this workflow, which is the refinement loop. The loop will keep refining the code until the number of loops reaches a threshold or the feedback model thinks the code is final.
+```mermaid
+flowchart
+    Problem([Problem]) --> FirstAnswerModel[First Answer Model]
+    FirstAnswerModel --> CodeTextMixture([Code + Text Mixture])
+    CodeTextMixture --> CodeProcessor[Code Processor]
+    CodeProcessor --> Code([Code])
+    CodeProcessor --> CodeAnswer([Code Answer])
+
+    Code --> Feedback[Feedback Model]
+    Problem --> Feedback
+    Feedback --> FeedbackText([Feedback Text])
+    FeedbackText --> IsFinal{Final or Not}
+    CodeAnswer --> IsFinal
+
+    FeedbackText --> Refine[Refine Model]
+    Code --> Refine
+    Refine --> CodeTextMixture    
+    
+    IsFinal -- Yes --> FinalOutput([Final Answer])
+```
+## Competition Result
+Timeout occurred. Since generating an answer using our workflow will need to pass through many LLMs, so it does take a considerable amount of time. We tried to tweak the parameters such as the maximum number of refine loops or number of self-consistency repetitions to reduce the number of LLM calls, but we still did not tweak them well enough to prevent timeout. 
+
+If timeout had not occurred, we expected to get a score of 15 to 25 out of 50, since our work was built on <a href="https://scholar.google.com/citations?user=Hc6MI0QAAAAJ&hl=en">Lewis Tunstall</a>'s notebook prototype and it scored 21.  
+
+In the future, we might change some models to no longer be based on LLMs. For example, we might parse the problem into the LEAN programming language, and our refine model might be trying out different problem-solving trajectories in the LEAN language space, which is just mechanically executing procedures instead of using LLM inference. 
+Exploring in the LEAN language space can be done programmatically rather than using the time-consuming LLM inference.
+
+# Old Stuff
+
+
 https://chat.openai.com/share/46f3ed0f-32fe-4fcf-8c6a-2dd85c586d78
 
 You are a mathematician that is excellent at finding patterns and trends from numbers. For example, given the sequence 2, 4, 6, 8, 10, ..., you should say that sequence is increasing. Now, given 1.3, 1.5, 1.7, 1.9, what can you say
