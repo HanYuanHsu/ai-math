@@ -1,12 +1,15 @@
-# Release
-The Kaggle notebook submitted to the <a href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize">AI Mathematical Olympiad - Progress Prize 1</a> can be viewed <a href="https://www.kaggle.com/code/tingjunwang/refine/edit/run/185764007">here [CHANGE TO PUBLIC]</a>.
+# About
+This repository contains our team's code for the Kaggle competition <a href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize">AI Mathematical Olympiad - Progress Prize 1</a>.
 
-Below is the workflow of our solution. The round boxes mean ... 
+The Kaggle notebook submitted to the competition can be viewed <a href="https://www.kaggle.com/code/tingjunwang/refine/edit/run/185764007">here</a>.
 
-Notice that there is a loop in this workflow, which is the refinement loop. The loop will keep refining the code until the number of loops reaches a threshold or the feedback model thinks the code is final.
+Below is the workflow of our solution. The input (Problem in round box)
+is a math problem stated in natural language, and the output (Final Answer in round box) is a number.  
+
+Notice that there is a loop in this workflow, which is the refinement loop. See the "Code + Text Mixture" round box, the arrow from it to the Code Processor, and the arrow from the Refine Model to it. The loop will keep refining the code until the number of loops reaches a threshold or the feedback model thinks the code is final.
 ```mermaid
 flowchart
-    Problem([Problem]) --> FirstAnswerModel[First Answer Model]
+    Problem(["Problem (text)"]) --> FirstAnswerModel[First Answer Model]
     FirstAnswerModel --> CodeTextMixture([Code + Text Mixture])
     CodeTextMixture --> CodeProcessor[Code Processor]
     CodeProcessor --> Code([Code])
@@ -24,8 +27,8 @@ flowchart
     
     IsFinal -- Yes --> FinalOutput([Final Answer])
 ```
-## Competition Result
-Timeout occurred. Since generating an answer using our workflow will need to pass through many LLMs, so it does take a considerable amount of time. We tried to tweak the parameters such as the maximum number of refine loops or number of self-consistency repetitions to reduce the number of LLM calls, but we still did not tweak them well enough to prevent timeout. 
+# Competition Result
+Our model answered 8 questions correctly out of 50 questions. It was not as good as expected because we suspected that timeout occurred for quite a few questions. Generating an answer using our workflow will need to pass through many LLMs, so it does take a considerable amount of time. We tried to tweak the parameters such as the maximum number of refine loops or number of self-consistency repetitions to reduce the number of LLM calls, but we still did not tweak them well enough to prevent timeout. 
 
 If timeout had not occurred, we expected to get a score of 15 to 25 out of 50, since our work was built on <a href="https://scholar.google.com/citations?user=Hc6MI0QAAAAJ&hl=en">Lewis Tunstall</a>'s notebook prototype and it scored 21.  
 
@@ -33,73 +36,13 @@ In the future, we might change some models to no longer be based on LLMs. For ex
 Exploring in the LEAN language space can be done programmatically rather than using the time-consuming LLM inference.
 
 # Old Stuff
+To see the notes for past development, please see `readme_old.md`.
+
+# Main Points
+Participated in the <a href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize">AI Mathematical Olympiad - Progress Prize 1</a>, a Kaggle competition to develop math-solving AIs featuring a speech by Terence Tao saying its positive impact. 
+
+Utilized a refine loop to improve the LLM's output answer based on feedback from LLM and python code execution.
+
+Developed a flask-based API to evaluate model performance on existing math QA benchmarks, since the competition dataset was very scarce. This evaluation API was crucial for locating where to improve our model workflow design. 
 
 
-https://chat.openai.com/share/46f3ed0f-32fe-4fcf-8c6a-2dd85c586d78
-
-You are a mathematician that is excellent at finding patterns and trends from numbers. For example, given the sequence 2, 4, 6, 8, 10, ..., you should say that sequence is increasing. Now, given 1.3, 1.5, 1.7, 1.9, what can you say
-
-I have downloaded code llama weights in cml7. Check contents of /tmp2/hhhsu <-- cml7 gone
-Go to cml9
-
-## Run Evaluation
-
-Take DeepSeek model for example:
-
-1. Deploy the model
-
-    Default run on http://localhost:8888
-
-    ```
-    cd deploy && python deepseek_api.py
-    ```
-2. Evaluate
-    
-    You can change the prompt in `prompts/prompt.py`
-
-    ```
-    python evaluate/deepseek.py
-    ```
-
-## Add models
-
-You will complete these `python` files.
-
-- `deploy/${NEW_MODEL}.py`: how to deploy your model to handle the prompt requests
-- `prompts/prompt.py`: Add your prompt for your new models
-- `models/${NEW_MODEL}.py`: how to request to your model which deployed
-- `evaluate.py`: import your model and use
-
-# Deepseek Model (The configuration used by Lewis, who scored 21)
-Check out `deploy/deepseek_math_api.py`. The `if __name__ == '__main__'` block shows how
-you can initialize the model and the prompt format it takes in. Remember to change the huggingface cache directory `HF_CACHE_DIR` to a directory of your choice.
-
-To execute `deploy/deepseek_math_api.py`, go to the `ai-math` directory and run
-```
-python -m deploy.deepseek_math_api
-```
-
-## Utility functions used by Lewis
-Check out `utils/lewis.py`. The functions there are directly copied from Lewis's notebook. The most interesting one is the `process_code` function, which executes the python code generated by the LLM. More specifically, it will write the code onto a python file `code.py` and then execute it.
-
-Go to the `ai-math` directory and run `python -m utils.lewis` to see how the `process_code` function works.
-
-# 6/10
-Trying out finetuning.
-Can use off-the shelf lora adapters: <br>
-https://huggingface.co/CMU-AIR2/deepseek-math-base-LORA-ArithSteps-10k <br>
-
-### Tutorials
-https://www.kaggle.com/code/jatinsinghsagoi/aimo-24-finetune-deepseek-math <br>
-^ I ran through this example, but looks like finetuning didn't make results better?<br>
-Also, the notebook sets the prompt format for the model wrong. <br>
-https://www.youtube.com/watch?v=Us5ZFp16PaU <br>
-^ I am replicating this video in finetuning.py, but I might stop
-
-### Strategies for improving performance
-https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/505756
-
-# 6/20
-https://www.kaggle.com/code/jonathanmichala/updated-code-interpretation-492274-for-competition
-https://www.kaggle.com/code/harrytheorange/updated-code-interpretation
-https://www.kaggle.com/code/chewkokwahibrainai/updated-code-interpretation-n-repetitions-17
