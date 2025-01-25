@@ -38,3 +38,5 @@ Exploring in the LEAN language space can be done programmatically rather than us
 # Old Stuff
 To see the notes for past development, please see `readme_old.md`.
 
+# References
+The `modeling` directory comes from MATH dataset code.
