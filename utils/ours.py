@@ -2,12 +2,10 @@ import re
 import sys
 import subprocess
 
-def return_last_print(output, n):
-    lines = output.strip().split('\n')
-    if lines:
-        return lines[n]
-    else:
-        return ""
+def extract_python_blocks(input_string: str):
+    pattern = r'```python(.*?)```'
+    matches = re.findall(pattern, input_string, re.DOTALL)
+    return [match.strip() for match in matches]
 
 def process_code(code: str):
     '''
@@ -22,18 +20,25 @@ def process_code(code: str):
     of this function's output to int, try `round(float(eval(return_value))) % 1000`.
     If any error occurs when executing the code, return -1. 
     '''
+    def return_last_print(output, n):
+        lines = output.strip().split('\n')
+        if lines:
+            return lines[n]
+        else:
+            return ""
 
     def repl(match):
         if "real" not in match.group():
             return "{}{}".format(match.group()[:-1], ', real=True)')
         else:
             return "{}{}".format(match.group()[:-1], ')')
+        
     code = re.sub(r"symbols\([^)]+\)", repl, code)
     
-    with open('code.py', 'w') as fout:
+    with open('_tmp.py', 'w') as fout:
         fout.write(code)
     
-    batcmd = 'timeout 7 ' + sys.executable + ' code.py'
+    batcmd = 'timeout 7 ' + sys.executable + ' _tmp.py'
     try:
         shell_output = subprocess.check_output(batcmd, shell=True).decode('utf8')
         return_value = return_last_print(shell_output, -1)
