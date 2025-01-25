@@ -1,5 +1,5 @@
 # About
-This repository contains our team's code for the Kaggle competition <a href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize">AI Mathematical Olympiad - Progress Prize 1</a>.
+This repository contains our team's code for the Kaggle competition <a href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize">AI Mathematical Olympiad - Progress Prize 1</a>. The competition aims to push progress in developing AIs that solve hard math problems such as IMO problems or even conduct math research. It is world-renowned, as it featured a speech by Terence Tao saying its positive impact. 
 
 The Kaggle notebook submitted to the competition can be viewed <a href="https://www.kaggle.com/code/tingjunwang/refine/edit/run/185764007">here</a>.
 
@@ -37,12 +37,4 @@ Exploring in the LEAN language space can be done programmatically rather than us
 
 # Old Stuff
 To see the notes for past development, please see `readme_old.md`.
-
-# Main Points
-Participated in the <a href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize">AI Mathematical Olympiad - Progress Prize 1</a>, a Kaggle competition to develop math-solving AIs featuring a speech by Terence Tao saying its positive impact. 
-
-Utilized a refine loop to improve the LLM's output answer based on feedback from LLM and python code execution.
-
-Developed a flask-based API to evaluate model performance on existing math QA benchmarks, since the competition dataset was very scarce. This evaluation API was crucial for locating where to improve our model workflow design. 
-
 
